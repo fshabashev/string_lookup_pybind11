@@ -89,7 +89,7 @@ public:
         sort_vector_of_pairs(pair_storage);
     }
 
-    StringPairHolder(std::vector< std::pair<std::string, std::string> > &vec) {
+    StringPairHolder(std::vector< std::pair<std::string, std::string> > vec) {
         pair_storage = vec;
         sort_vector_of_pairs(pair_storage);
     }
@@ -187,5 +187,9 @@ PYBIND11_MODULE(cpp_string_lookup, m) {
             .def(py::init< std::vector<std::string> >())
             .def("get_index", &StringHolder::get_index)
             .def("lookup", &StringHolder::lookup);
+    py::class_<StringPairHolder>(m, "StringPairHolder")
+            .def(py::init< std::vector<std::pair<std::string, std::string> > >())
+            .def("get_value", &StringPairHolder::get_value)
+            .def("contains", &StringPairHolder::contains);
 }
 

@@ -1,6 +1,6 @@
 # Installation
 
-Run the following command to download pybind11:
+Run the following command to download pybind11 (from the project root directory):
 
 ```
 git clone https://github.com/pybind/pybind11.git
